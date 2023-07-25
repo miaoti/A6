@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="phone.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="phone.js"></script>
+</head>
+<body>
+<a href="index-large.html">Switch to Large Font Mode</a>
+<div class="tabs">
+    <button class="tablink" onclick="openTab(event, 'dialer')">Dialer</button>
+    <button class="tablink" onclick="openTab(event, 'contacts')">Contacts</button>
+    <button class="tablink" onclick="openTab(event, 'addContact')">Add Contact</button>
+    <button class="tablink" onclick="openTab(event, 'AboutthisProject')">About this Project</button>
+</div>
+
+<div id="dialer" class="tabcontent">
+    <h3>Dialer</h3>
+    <input type="text" id="phoneNumber" class="form__input" placeholder="Enter phone number">
+    <br>
+    <div class="keypad">
+        <div>
+            <button class="key" onclick="addDigit(1)">1</button>
+            <button class="key" onclick="addDigit(2)">2</button>
+            <button class="key" onclick="addDigit(3)">3</button>
+        </div>
+        <div>
+            <button class="key" onclick="addDigit(4)">4</button>
+            <button class="key" onclick="addDigit(5)">5</button>
+            <button class="key" onclick="addDigit(6)">6</button>
+        </div>
+        <div>
+            <button class="key" onclick="addDigit(7)">7</button>
+            <button class="key" onclick="addDigit(8)">8</button>
+            <button class="key" onclick="addDigit(9)">9</button>
+        </div>
+        <div>
+            <button class="key" onclick="addDigit('*')">*</button>
+            <button class="key" onclick="addDigit(0)">0</button>
+            <button class="key" onclick="addDigit('#')">#</button>
+        </div>
+    </div>
+    <br>
+    <div class="button-container">
+    <button class="button-28" onclick="dialNumber()">Dial</button>
+    <button class="button-28" onclick="clearInput()">Clear</button>
+    </div>
+</div>
+
+<div id="contacts" class="tabcontent">
+    <h3>Contacts</h3>
+    <div id="contactList"></div>
+</div>
+
+<div id="AboutthisProject" class="tabcontent">
+    <p>Testing the magnifier tool was an enlightening process. Initially, it was a challenge to understand how to efficiently integrate it into the design without causing confusion or discomfort for the user. It was found that the magnifier tool can sometimes obscure important information on the screen, so care had to be taken to ensure that it magnified the necessary parts of the interface without blocking other essential components.Designing the low vision mode was a meticulous process that necessitated a deep understanding of the users' needs and how they interact with the interface. The aim was to enhance visibility and contrast without causing strain or discomfort.</p>
+
+    <p>Several features were added to the low vision mode to optimize it for users with visual impairments. These include:</p>
+
+    <ul>
+        <li>A high contrast mode was implemented to improve text readability and distinguishability of various UI elements.</li>
+        <li>The user interface was designed to accommodate larger text sizes without disrupting the layout or usability.</li>
+        <li>Lastly, we understood that one size does not fit all. So, we provided options for users to personalize the interface according to their needs and preferences.</li>
+    </ul>
+
+    <p>Through this project, we learned that designing for low vision requires a user-centric approach and a deep understanding of the user's needs and challenges. It's about more than just enlarging text or increasing contrast - it's about ensuring that the user can interact with the application effectively and comfortably. We look forward to applying these insights to future projects to make our applications more accessible and inclusive.</p>
+</div>
+
+<div id="addContact" class="tabcontent">
+    <h3>Add Contact</h3>
+    <form onsubmit="addContact(event)">
+        <div class="group">
+            <input type="text" id="name" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Name</label>
+        </div>
+        <div class="group">
+            <input type="text" id="phone" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Phone</label>
+        </div>
+        <div class="group">
+            <input type="text" id="email" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Email</label>
+        </div>
+        <div class="button-container">
+        <button class="button-28" type="submit">Add</button>
+        <button class="button-28" type="button" onclick="clearForm()">Clear</button>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>
